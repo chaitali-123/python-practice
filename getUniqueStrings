@@ -1,0 +1,24 @@
+def split(string, k):
+    
+    final = [string[i * k:(i + 1) * k] for i in range((len(string) + k - 1) // k )] 
+    return final
+
+
+def get_unique(string1):
+    temp=str()
+    for char in range(len(string1)):
+       if string1[char] not in temp:
+          temp=temp+(string1[char])
+    return(str(temp))
+              
+def merge_the_tools(string, k):
+    strings=split(string, k)
+    # print(strings)
+    for string1 in strings:
+        temp=get_unique(string1)
+        print(temp)
+    
+            
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
